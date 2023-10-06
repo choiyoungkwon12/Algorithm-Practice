@@ -42,7 +42,7 @@ public class 미로탐색_2178 {
                 int nx = x + dx[i];
                 int ny = y + dy[i];
                 if (nx >= 0 && ny >= 0 && nx < n && ny < m) {
-                    if (map[nx][ny] < map[x][y] + 1 && map[nx][ny] == 1) {
+                    if (map[nx][ny] == 1) {
                         map[nx][ny] = map[x][y] + 1;
                         queue.add(new int[]{nx, ny});
                     }
