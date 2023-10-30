@@ -64,6 +64,7 @@ public class 전력망둘로나누기 {
                 }
             }
         }
+        // 한쪽만 갯수를 구하면 나머지 그룹의 갯수는 자동으로 계산 가능
         return Math.abs(cnt - (n - cnt));
     }
 }
