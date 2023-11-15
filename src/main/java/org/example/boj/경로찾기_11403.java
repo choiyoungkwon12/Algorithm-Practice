@@ -9,7 +9,7 @@ import java.util.StringTokenizer;
  * 플로이드 워셜 변형
  * - i ~ k , k ~ j 의 경로가 있다면 i ~ j 경로가 있다.
  */
-public class 경로찾기 {
+public class 경로찾기_11403 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
