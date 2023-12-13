@@ -2,7 +2,7 @@ package org.example.hackerrank;
 
 import java.util.Stack;
 
-public class Queue {
+public class Queues {
 
     public static void main(String[] args) {
         Stack<Integer> stack1 = new Stack<>();

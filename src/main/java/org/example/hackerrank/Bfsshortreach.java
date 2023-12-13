@@ -6,7 +6,7 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 
-public class bfsshortreach {
+public class Bfsshortreach {
     /*
      * Complete the 'bfs' function below.
      *
