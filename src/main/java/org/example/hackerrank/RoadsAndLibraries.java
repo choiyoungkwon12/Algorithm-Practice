@@ -40,8 +40,7 @@ public class RoadsAndLibraries {
             map.add(new ArrayList<>());
         }
 
-        for (int i = 0; i < cities.size(); i++) {
-            List<Integer> city = cities.get(i);
+        for (List<Integer> city : cities) {
             int city1 = city.get(0);
             int city2 = city.get(1);
             map.get(city1).add(city2);
