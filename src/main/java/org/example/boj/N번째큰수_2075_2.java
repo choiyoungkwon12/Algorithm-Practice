@@ -5,6 +5,7 @@ package org.example.boj;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Comparator;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.StringTokenizer;
@@ -34,5 +35,13 @@ public class N번째큰수_2075_2 {
         }
         // 가장 큰 n개의 수만 들어있기 때문에 그 중 가장 작은 수를 뽑으면 n번째 큰수가됨
         System.out.println(queue.poll());
+
+        // 문자열은 기본적으로 알파벳 오른차순정렬, o2.compareTo(o1) or Comparator.reverseOrder() 을 하면 알파벳 내림차순
+        Queue<String> q = new PriorityQueue<>(Comparator.reverseOrder());
+        q.add("b");
+        q.add("a");
+        q.add("d");
+        q.add("c");
+        System.out.println(q);
     }
 }
