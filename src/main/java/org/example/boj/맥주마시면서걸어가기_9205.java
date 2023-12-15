@@ -57,7 +57,6 @@ public class 맥주마시면서걸어가기_9205 {
             return true;
         }
 
-
         while (!queue.isEmpty()) {
             Node current = queue.poll();
             for (int i = 0; i < list.size(); i++) {
