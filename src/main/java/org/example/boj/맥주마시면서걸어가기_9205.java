@@ -51,6 +51,8 @@ public class 맥주마시면서걸어가기_9205 {
         queue.add(start);
 
         boolean result = false;
+
+        // 굳이 편의점을 거치지 않더라도 바로 도착지에 도착할 수 있는지
         if (Math.abs(end.x - start.x) + Math.abs(end.y - start.y) <= 1000) {
             return true;
         }
