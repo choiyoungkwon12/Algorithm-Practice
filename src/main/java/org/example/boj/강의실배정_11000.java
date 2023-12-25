@@ -10,7 +10,7 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 // 시작 시간으로 오름차순 정렬, 같으면 종료시간 기준 오름차순
-// 우선순위큐에 종료시간 넣고
+// 우선순위큐에 종료시간 넣고 다음 강의의 시작 시간과 비교해서 종료시간이 더 빠르면 큐에서 빼고 다음 강의 종료시간을 큐에 넣음.
 public class 강의실배정_11000 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
