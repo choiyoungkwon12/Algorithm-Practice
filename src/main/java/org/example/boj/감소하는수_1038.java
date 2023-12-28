@@ -41,6 +41,7 @@ public class 감소하는수_1038 {
 
         list.add(num);
 
+        // 재귀를 이용해서 감소하는 숫자를 만든다.
         for (int i = 0; i < 10; i++) {
             if (num % 10 > i) {
                 calculate((num * 10) + (long) i);
