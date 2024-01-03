@@ -30,7 +30,16 @@ public class 적록색약_10026 {
 
         int result = bfs();
         Arrays.stream(visited).forEach(booleans -> Arrays.fill(booleans, false));
-        int result1 = bfsWithSameRG();
+        for (int i = 0; i < map.length; i++) {
+            char[] chars = map[i];
+            for (int j = 0; j < chars.length; j++) {
+                char aChar = chars[j];
+                if (aChar == 'G') {
+                    map[i][j] = 'R';
+                }
+            }
+        }
+        int result1 = bfs();
         System.out.println(result + " " + result1);
     }
 
@@ -50,34 +59,6 @@ public class 적록색약_10026 {
                             int ny = node.c + dy[k];
                             if (nx >= 0 && ny >= 0 && nx < map.length && ny < map[node.c].length && !visited[nx][ny]) {
                                 if (map[nx][ny] == map[node.r][node.c]) {
-                                    queue.add(new Node(map[nx][ny], nx, ny));
-                                    visited[nx][ny] = true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-        return count;
-    }
-
-    private static int bfsWithSameRG() {
-        int count = 0;
-        Queue<Node> queue = new LinkedList<>();
-        for (int i = 0; i < map.length; i++) {
-            for (int j = 0; j < map[i].length; j++) {
-                if (!visited[i][j]) {
-                    queue.add(new Node(map[i][j], i, j));
-                    visited[i][j] = true;
-                    count++;
-                    while (!queue.isEmpty()) {
-                        Node node = queue.poll();
-                        for (int k = 0; k < 4; k++) {
-                            int nx = node.r + dx[k];
-                            int ny = node.c + dy[k];
-                            if (nx >= 0 && ny >= 0 && nx < map.length && ny < map[node.c].length && !visited[nx][ny]) {
-                                if ((map[nx][ny] == map[node.r][node.c]) || ((map[node.r][node.c] == 'R' || map[node.r][node.c] == 'G') && (map[nx][ny] == 'R' || map[nx][ny] == 'G'))) {
                                     queue.add(new Node(map[nx][ny], nx, ny));
                                     visited[nx][ny] = true;
                                 }
