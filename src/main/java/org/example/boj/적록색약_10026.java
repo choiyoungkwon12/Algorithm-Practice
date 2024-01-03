@@ -7,7 +7,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
-
+/*
+https://www.acmicpc.net/problem/10026
+ */
 public class 적록색약_10026 {
     private static char[][] map;
     private static boolean[][] visited;
