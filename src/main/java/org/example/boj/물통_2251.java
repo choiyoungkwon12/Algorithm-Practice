@@ -11,7 +11,6 @@ import java.util.Queue;
 import java.util.StringTokenizer;
 
 public class 물통_2251 {
-    private static int a, b, c;
     private static List<Integer[]> list, history;
     private static final List<Node> bottles = new ArrayList<>();
 
@@ -22,12 +21,10 @@ public class 물통_2251 {
         list = new ArrayList<>();
         history = new ArrayList<>();
 
-        a = Integer.valueOf(st.nextToken());
-        bottles.add(new Node(a));
-        b = Integer.valueOf(st.nextToken());
-        bottles.add(new Node(b));
-        c = Integer.valueOf(st.nextToken());
-        bottles.add(new Node(c));
+        for (int i = 0; i < 3; i++) {
+            int num = Integer.parseInt(st.nextToken());
+            bottles.add(new Node(num));
+        }
 
         bfs();
 
@@ -41,7 +38,7 @@ public class 물통_2251 {
 
     private static void bfs() {
         Queue<Integer[]> queue = new LinkedList<>();
-        Integer[] start = {0, 0, c};
+        Integer[] start = {0, 0, bottles.get(2).limit};
         queue.add(start);
         history.add(start);
 
@@ -67,15 +64,15 @@ public class 물통_2251 {
                             n1 = node[j] + node[i];
                         }
 
-                        Integer[] integers = new Integer[3];
-                        integers[i] = ns;
-                        integers[j] = n1;
-                        int another = 6 - (j + 1) - (i + 1);
-                        int n3 = node[another - 1];
-                        integers[another - 1] = n3;
-                        if (notContainsHistory(integers)) {
-                            history.add(integers); // 방문 여부 체크
-                            queue.add(integers);
+                        Integer[] next = new Integer[3];
+                        next[i] = ns;
+                        next[j] = n1;
+                        int another = 3 - j - i;
+                        int n3 = node[another];
+                        next[another] = n3;
+                        if (notContainsHistory(next)) {
+                            history.add(next); // 방문 여부 체크
+                            queue.add(next);
                         }
                     }
                 }
